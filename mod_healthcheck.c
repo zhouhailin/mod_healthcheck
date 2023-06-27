@@ -62,8 +62,9 @@ static switch_status_t do_config(void)
    switch_xml_t cfg, xml, settings, param;
 
    if (!(xml = switch_xml_open_cfg(cf, &cfg, NULL))) {
-	   switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_ERROR, "Open of %s failed\n", cf);
-	   return SWITCH_STATUS_TERM;
+	   switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_NOTICE, "Open of %s failed, default listen port 62589\n", cf);
+	   globals.port = 62589;
+	   return SWITCH_STATUS_SUCCESS;
    }
 
    if ((settings = switch_xml_child(cfg, "settings"))) {
