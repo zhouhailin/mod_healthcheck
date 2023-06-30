@@ -76,3 +76,4 @@ $(switch_srcdir)/libs/xmlrpc-c/lib/expat/xmltok/xmltok.c
 
 mod_healthcheck_la_CFLAGS  += $(AM_CFLAGS) -I. -w
 
+MOD_CFLAGS = $(mod_healthcheck_la_CFLAGS)
